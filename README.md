@@ -8,7 +8,7 @@ Add basic prep stuff in this repo.
 
 
 
-## Designpatterns with test from tutorialspoint
+## Leetcode test
 * Created with mvn
 * ```mvn clean verify``` to run verify
 
