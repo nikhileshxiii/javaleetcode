@@ -4,7 +4,7 @@ Add basic prep stuff in this repo.
 
 #### Master branch build status:
 
-![Github Actions](https://github.com/nikhileshxiii/javaleetcode/workflows/javaleetcode/badge.svg?branch=master)
+![Main branch](https://github.com/nikhileshxiii/javaleetcode/workflows/javaleetcode/badge.svg?branch=main)
 
 
 
