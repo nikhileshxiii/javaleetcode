@@ -2,7 +2,8 @@ package com.leetcode.javaapp.pbm3;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 class SolutionTest {
 
@@ -13,49 +14,10 @@ class SolutionTest {
         solution = new Solution();
     }
 
-    @Test
-    void example1() {
-        String s = "abcabcbb";
-        int output = 3;
-
+    @ParameterizedTest
+    @CsvSource({ "3, abcabcbb", "1, bbbbb", "3, pwwkew", "0, ''", "3, dvdf" })
+    void example(int output, String s) {
         int res = solution.lengthOfLongestSubstring(s);
         Assertions.assertEquals(output, res);
     }
-
-    @Test
-    void example2() {
-        String s = "bbbbb";
-        int output = 1;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    void example3() {
-        String s = "pwwkew";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    void example4() {
-        String s = "";
-        int output = 0;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    void example5() {
-        String s = "dvdf";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
 }
