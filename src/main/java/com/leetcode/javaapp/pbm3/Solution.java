@@ -1,29 +1,26 @@
 package com.leetcode.javaapp.pbm3;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        if (s == null || s.isEmpty()) return 0;
-        Map<Character, Integer> map = new HashMap<>();
-        int startIndex = 0;
-        int endIndex = 0;
-        int longestStringStartIndex = 0;
-        int longestStringEndIndex = 0;
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            if (map.containsKey(ch)) {
-                startIndex = i;
+        int longestStringLength = 0;
+        int start = 0;
+        int end = 0;
+        Set<Character> set = new HashSet<>();
+
+        while (end < s.length()) {
+            char charConsidered = s.charAt(end);
+            if (set.contains(charConsidered)) {
+                set.remove(s.charAt(start));
+                start++;
             } else {
-                map.put(ch, i);
-                endIndex = i;
-                if (endIndex - startIndex > longestStringEndIndex - longestStringStartIndex) {
-                    longestStringStartIndex = startIndex;
-                    longestStringEndIndex = endIndex;
-                }
+                set.add(charConsidered);
+                longestStringLength = Math.max(longestStringLength, set.size());
+                end++;
             }
         }
-        return s.substring(longestStringStartIndex, longestStringEndIndex + 1).length();
+        return longestStringLength;
     }
 }
