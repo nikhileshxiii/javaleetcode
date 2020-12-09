@@ -1,4 +1,4 @@
-package com.leetcode.javaapp.pbm3;
+package com.leetcode.javaapp.pbm1678;
 
 import org.junit.jupiter.api.*;
 
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 @DisplayNameGeneration(SolutionTest.CustomDisplayNameGenerator.class)
 class SolutionTest {
 
-    Solution solution;
+    private Solution solution;
 
     @BeforeEach
     void setUp() {
@@ -17,49 +17,24 @@ class SolutionTest {
     }
 
     @Test
-    void example1() {
-        String s = "abcabcbb";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void interpret1() {
+        String command = "G()(al)";
+        String Output = "Goal";
+        Assertions.assertEquals(Output, solution.interpret(command));
     }
 
     @Test
-    void example2() {
-        String s = "bbbbb";
-        int output = 1;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void interpret2() {
+        String command = "G()()()()(al)";
+        String Output = "Gooooal";
+        Assertions.assertEquals(Output, solution.interpret(command));
     }
 
     @Test
-    void example3() {
-        String s = "pwwkew";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    void example4() {
-        String s = "";
-        int output = 0;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    @Disabled
-    void example5() {
-        String s = "dvdf";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void interpret3() {
+        String command = "(al)G(al)()()G";
+        String Output = "alGalooG";
+        Assertions.assertEquals(Output, solution.interpret(command));
     }
 
     static class CustomDisplayNameGenerator extends DisplayNameGenerator.Standard {

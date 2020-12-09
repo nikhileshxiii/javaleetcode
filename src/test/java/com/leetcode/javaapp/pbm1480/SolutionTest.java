@@ -1,6 +1,9 @@
-package com.leetcode.javaapp.pbm1;
+package com.leetcode.javaapp.pbm1480;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayNameGeneration;
+import org.junit.jupiter.api.DisplayNameGenerator;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -9,7 +12,7 @@ import java.util.stream.Collectors;
 @DisplayNameGeneration(SolutionTest.CustomDisplayNameGenerator.class)
 class SolutionTest {
 
-    Solution solution;
+    private Solution solution;
 
     @BeforeEach
     void setUp() {
@@ -17,30 +20,21 @@ class SolutionTest {
     }
 
     @Test
-    void example1() {
-        int[] nums = new int[]{2, 7, 11, 15};
-        int target = 9;
-        int[] output = new int[]{0, 1};
-        int[] res = solution.twoSum(nums, target);
-        Assertions.assertArrayEquals(output, res);
+    void runningSum1() {
+        int[] nums = new int[]{1, 2, 3, 4};
+        int[] output = new int[]{1, 3, 6, 10};
     }
 
     @Test
-    void example2() {
-        int[] nums = new int[]{3, 2, 4};
-        int target = 6;
-        int[] output = new int[]{1, 2};
-        int[] res = solution.twoSum(nums, target);
-        Assertions.assertArrayEquals(output, res);
+    void runningSum2() {
+        int[] nums = new int[]{1, 1, 1, 1, 1};
+        int[] output = new int[]{1, 2, 3, 4, 5};
     }
 
     @Test
-    void example3() {
-        int[] nums = new int[]{3, 3};
-        int target = 6;
-        int[] output = new int[]{0, 1};
-        int[] res = solution.twoSum(nums, target);
-        Assertions.assertArrayEquals(output, res);
+    void runningSum3() {
+        int[] nums = new int[]{3, 1, 2, 10, 1};
+        int[] output = new int[]{3, 4, 6, 16, 17};
     }
 
     static class CustomDisplayNameGenerator extends DisplayNameGenerator.Standard {
@@ -61,4 +55,5 @@ class SolutionTest {
             return Arrays.stream(name.split("_")).collect(Collectors.joining(" | "));
         }
     }
+
 }

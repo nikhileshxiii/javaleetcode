@@ -1,9 +1,10 @@
 package com.leetcode.javaapp.pbm2;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
+import java.lang.reflect.Method;
+
+@DisplayNameGeneration(SolutionTest.CustomDisplayNameGenerator.class)
 class SolutionTest {
 
     Solution solution;
@@ -83,6 +84,25 @@ class SolutionTest {
             Assertions.assertEquals(outputNode.val, output.val);
             outputNode = outputNode.next;
             output = output.next;
+        }
+    }
+
+    static class CustomDisplayNameGenerator extends DisplayNameGenerator.Standard {
+
+        @Override
+        public String generateDisplayNameForClass(Class<?> testClass) {
+            return this.getClass().getPackageName();
+        }
+
+        @Override
+        public String generateDisplayNameForNestedClass(Class<?> nestedClass) {
+            return super.generateDisplayNameForNestedClass(nestedClass);
+        }
+
+        @Override
+        public String generateDisplayNameForMethod(Class<?> testClass, Method testMethod) {
+            String name = testMethod.getName();
+            return String.join(" | ", name.split("_"));
         }
     }
 }

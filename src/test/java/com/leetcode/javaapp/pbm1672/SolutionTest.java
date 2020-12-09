@@ -1,4 +1,4 @@
-package com.leetcode.javaapp.pbm3;
+package com.leetcode.javaapp.pbm1672;
 
 import org.junit.jupiter.api.*;
 
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 @DisplayNameGeneration(SolutionTest.CustomDisplayNameGenerator.class)
 class SolutionTest {
 
-    Solution solution;
+    private Solution solution;
 
     @BeforeEach
     void setUp() {
@@ -17,49 +17,27 @@ class SolutionTest {
     }
 
     @Test
-    void example1() {
-        String s = "abcabcbb";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void maximumWealth1() {
+        int[][] accounts = new int[][]{{1, 2, 3}, {3, 2, 1}};
+        Integer output = 6;
+        Integer result = solution.maximumWealth(accounts);
+        Assertions.assertEquals(output, result);
     }
 
     @Test
-    void example2() {
-        String s = "bbbbb";
-        int output = 1;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void maximumWealth2() {
+        int[][] accounts = new int[][]{{1, 5}, {7, 3}, {3, 5}};
+        Integer output = 10;
+        Integer result = solution.maximumWealth(accounts);
+        Assertions.assertEquals(output, result);
     }
 
     @Test
-    void example3() {
-        String s = "pwwkew";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    void example4() {
-        String s = "";
-        int output = 0;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
-    }
-
-    @Test
-    @Disabled
-    void example5() {
-        String s = "dvdf";
-        int output = 3;
-
-        int res = solution.lengthOfLongestSubstring(s);
-        Assertions.assertEquals(output, res);
+    void maximumWealth3() {
+        int[][] accounts = new int[][]{{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
+        Integer output = 17;
+        Integer result = solution.maximumWealth(accounts);
+        Assertions.assertEquals(output, result);
     }
 
     static class CustomDisplayNameGenerator extends DisplayNameGenerator.Standard {
