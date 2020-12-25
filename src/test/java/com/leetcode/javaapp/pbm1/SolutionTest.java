@@ -43,6 +43,15 @@ class SolutionTest {
         Assertions.assertArrayEquals(output, res);
     }
 
+    @Test
+    void example4() {
+        int[] nums = new int[]{3, 2, 4};
+        int target = 9;
+        int[] output = null;
+        int[] res = solution.twoSum(nums, target);
+        Assertions.assertArrayEquals(output, res);
+    }
+
     static class CustomDisplayNameGenerator extends DisplayNameGenerator.Standard {
 
         @Override

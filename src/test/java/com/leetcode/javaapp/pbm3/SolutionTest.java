@@ -53,7 +53,6 @@ class SolutionTest {
     }
 
     @Test
-    @Disabled
     void example5() {
         String s = "dvdf";
         int output = 3;
